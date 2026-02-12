@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo 'Compilation et tests avec Maven...'
                 // Utilise Maven pour compiler et tester (nécessite Maven sur la machine Jenkins)
-                sh 'mvn clean package'
+                bat 'mvn clean package'
             }
         }
 
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 echo 'Création de l\'image Docker...'
                 // Construit l'image Docker en utilisant le Dockerfile
-                sh 'docker build -t spring-boot-app:latest .'
+                bat 'docker build -t spring-boot-app:latest .'
             }
         }
 
