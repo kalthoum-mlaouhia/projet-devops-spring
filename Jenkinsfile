@@ -19,7 +19,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                echo 'Création de l'image Docker...'
+                echo 'Création de l\'image Docker...'
                 // Construit l'image Docker en utilisant le Dockerfile
                 sh 'docker build -t spring-boot-app:latest .'
             }
