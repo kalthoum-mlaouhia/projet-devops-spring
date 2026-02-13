@@ -1,14 +1,13 @@
-# Étape 1 : Construction (Build)
-FROM maven:3.8.5-openjdk-17 AS build
+# Étape 1 : Build (facultatif si Jenkins a déjà fait le mvn package, mais plus propre)
+FROM maven:3.9.6-eclipse-temurin-21 AS build
 WORKDIR /app
-COPY pom.xml .
-COPY src ./src
+COPY . .
 RUN mvn clean package -DskipTests
 
-# Étape 2 : Production (Runtime)
-FROM openjdk:17-jdk-slim
+# Étape 2 : Production (Runtime) - C'est ici que ça bloquait
+FROM eclipse-temurin:21-jre
 WORKDIR /app
-# Copier le JAR généré depuis l'étape de build
+# On récupère le JAR généré à l'étape précédente
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]
