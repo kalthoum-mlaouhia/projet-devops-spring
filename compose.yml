@@ -1,0 +1,7 @@
+services:
+  backend:
+    container_name: backend
+    image: spring-boot-app:v1
+    ports:
+      - "8085:8080"
+    restart: always
