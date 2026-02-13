@@ -25,7 +25,7 @@ pipeline {
             }
         }
 
-        stage('Docker Build') {
+        stage('Docker run') {
            steps {
              echo 'lancement'
                 bat 'docker run -d -p 8085:8080 --name mon-app-spring spring-boot-app:latest'
