@@ -31,6 +31,5 @@ pipeline {
                 bat 'docker compose --project-name backend up -d'
           }
         }
-
     }
 }
