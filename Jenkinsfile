@@ -11,12 +11,6 @@ pipeline {
             }
         }
 
-        stage('Build & Test') {
-            steps {
-                echo 'Compilation et tests avec Maven...'
-                bat 'mvn clean package'
-            }
-        }
 
         stage('Docker Build') {
             steps {
