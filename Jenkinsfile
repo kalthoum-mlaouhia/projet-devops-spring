@@ -22,7 +22,7 @@ pipeline {
         stage('Docker run') {
            steps {
              echo 'lancement'
-                bat 'docker compose --project-name backend up -d'
+                bat 'docker compose up -d'
           }
         }
     }
