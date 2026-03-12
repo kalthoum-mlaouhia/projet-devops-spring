@@ -8,6 +8,6 @@ public class HelloController {
 
     @GetMapping("/")
     public String sayHello() {
-        return "Le déploiement est réussi ! nn";
+        return "Le déploiement est réussi !";
     }
 }
