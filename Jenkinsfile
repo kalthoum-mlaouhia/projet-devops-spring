@@ -33,7 +33,7 @@ pipeline {
         stage('Docker run') {
            steps {
              echo 'lancement'
-                bat 'docker compose up -d'
+                bat 'docker compose --project-name devops up -d'
           }
         }
     }
