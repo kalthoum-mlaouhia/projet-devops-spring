@@ -33,7 +33,6 @@ pipeline {
         stage('Docker run') {
            steps {
              echo 'lancement'
-                bat 'docker compose down'
                 bat 'docker compose up -d'
           }
         }
