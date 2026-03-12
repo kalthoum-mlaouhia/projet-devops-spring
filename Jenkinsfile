@@ -11,12 +11,12 @@ pipeline {
             }
         }
 
-    stage('SonarQube Analysis') {
-        steps {
-            script {
-                def mvnHome = tool 'maven'
-                withSonarQubeEnv('sonar-server') {
-                    bat "${mvnHome}\\bin\\mvn clean verify sonar:sonar -Dsonar.projectKey=devops-project"
+        stage('SonarQube Analysis') {
+            steps {
+                script {
+                    def mvnHome = tool 'maven'
+                    withSonarQubeEnv('sonar-server') {
+                        bat "${mvnHome}\\bin\\mvn clean verify sonar:sonar -Dsonar.projectKey=devops-project"
                     }
                 }
             }
