@@ -8,6 +8,7 @@ services:
     ports:
       - "3306:3306"
     environment:
+      - DB_HOST=mysql
       - MYSQL_DATABASE=automation_taches
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_USER=user
